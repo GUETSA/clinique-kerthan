@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinique KERTHAN - 20 ans d'excellence médicale</title>
+    <!-- Use Google Fonts (Plus Jakarta Sans matches well) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- PDF Generation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- KEEP ORIGINAL HEADER -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <span class="logo-text">Clinique KERTHAN<span>.</span></span>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home" class="active">Accueil</a></li>
+                    <li><a href="#specialties">Services Médicaux</a></li>
+                    <li><a href="#about">À Propos</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <button class="btn btn-primary" id="book-btn">Prendre Rendez-vous</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="main-hero container reveal" id="home">
+            <div class="main-hero-grid">
+                <div class="main-hero-content">
+                    <div class="badge" style="display:inline-flex; align-items:center; gap:8px; padding:8px 20px; background:var(--primary-light); color:var(--primary-dark); font-weight:600; border-radius:9999px; margin-bottom:24px;">
+                        <i class="fa-solid fa-star"></i> Clinique #1 au Cameroun
+                    </div>
+                    <h1 class="main-hero-title">L'Excellence Médicale<br>à Votre <span>Portée</span> <span class="emoji">🩺</span></h1>
+                    <p class="main-hero-subtitle">Commencez votre parcours vers une meilleure santé. Trouvez le bon médecin et la bonne spécialité ci-dessous. <span class="emoji">💊</span> <span class="emoji">🏥</span></p>
+                    <button class="btn btn-cta" id="hero-book-btn">Prendre Rendez-vous</button>
+                </div>
+                <div class="main-hero-visual">
+                    <div class="hero-img-container">
+                        <img src="img/hero.png" onerror="this.src='https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800';" alt="Hospital Lobby" class="main-hero-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SPECIALTIES RIBBON -->
+        <div class="specialties-ribbon reveal" style="margin-top:40px;">
+            <div class="container">
+                <div class="ribbon-track">
+                    <a href="medecine-generale.html" class="ribbon-item"><i class="fa-solid fa-stethoscope"></i> Médecine Générale</a>
+                    <a href="medecine-generale.html" class="ribbon-item"><i class="fa-solid fa-heart-pulse"></i> Cardiologie</a>
+                    <a href="medecine-generale.html" class="ribbon-item"><i class="fa-solid fa-person-breastfeeding"></i> Maternité / Gynécologie</a>
+                    <a href="chirurgie-dentaire.html" class="ribbon-item"><i class="fa-solid fa-scalpel-line-dashed"></i> Chirurgie</a>
+                    <a href="chirurgie-dentaire.html" class="ribbon-item"><i class="fa-solid fa-tooth"></i> Soins Dentaires</a>
+                    <a href="expertises.html" class="ribbon-item"><i class="fa-solid fa-user-doctor"></i> Médecine Interne</a>
+                    <a href="laboratoire-imagerie.html" class="ribbon-item"><i class="fa-solid fa-microscope"></i> Laboratoire</a>
+                    <a href="laboratoire-imagerie.html" class="ribbon-item"><i class="fa-solid fa-x-ray"></i> Imagerie Médicale</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CLINICAL EXCELLENCE SECTION -->
+        <section class="clinical-excellence container reveal" id="specialties">
+            <div class="excellence-header">
+                <h2>Nos Services Médicaux</h2>
+                <p>Un plateau technique complet et des consultations variées pour répondre à tous vos besoins de santé.</p>
+            </div>
+            
+            <div class="specialties-grid">
+                <!-- Row 1 -->
+                <div class="specialty-card">
+                    <a href="medecine-generale.html" style="display:contents; color:inherit;">
+                        <div class="spec-icon"><i class="fa-solid fa-stethoscope"></i></div>
+                        <div class="spec-info">
+                            <h3>Médecine Générale</h3>
+                            <p>Soins complets pour enfants et adultes.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="specialty-card">
+                    <a href="medecine-generale.html" style="display:contents; color:inherit;">
+                        <div class="spec-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                        <div class="spec-info">
+                            <h3>Cardiologie</h3>
+                            <p>Diagnostic et traitement experts du cœur.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="specialty-card">
+                    <a href="laboratoire-imagerie.html" style="display:contents; color:inherit;">
+                        <div class="spec-icon"><i class="fa-solid fa-microscope"></i></div>
+                        <div class="spec-info">
+                            <h3>Laboratoire & Imagerie</h3>
+                            <p>Analyses rapides et diagnostics précis.</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- Row 2 -->
+                <div class="specialty-card">
+                    <a href="chirurgie-dentaire.html" style="display:contents; color:inherit;">
+                        <div class="spec-icon"><i class="fa-solid fa-tooth"></i></div>
+                        <div class="spec-info">
+                            <h3>Soins Dentaires</h3>
+                            <p>Services dentaires complets et esthétiques.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="specialty-card">
+                    <a href="medecine-generale.html" style="display:contents; color:inherit;">
+                        <div class="spec-icon"><i class="fa-solid fa-user-doctor"></i></div>
+                        <div class="spec-info">
+                            <h3>Médecine Interne</h3>
+                            <p>Prévention et traitement des maladies chroniques.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="specialty-card">
+                    <a href="medecine-generale.html#cps" style="display:contents; color:inherit;">
+                        <div class="spec-icon"><i class="fa-solid fa-briefcase-medical"></i></div>
+                        <div class="spec-info">
+                            <h3>Médecine du Travail</h3>
+                            <p>Santé professionnelle et sécurité au travail.</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- Row 3 -->
+                <div class="specialty-card">
+                    <a href="medecine-generale.html" style="display:contents; color:inherit;">
+                        <div class="spec-icon"><i class="fa-solid fa-person-breastfeeding"></i></div>
+                        <div class="spec-info">
+                            <h3>Maternité & Gynéco</h3>
+                            <p>Soins spécialisés maternels et infantiles.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="specialty-card">
+                    <a href="chirurgie-dentaire.html" style="display:contents; color:inherit;">
+                        <div class="spec-icon"><i class="fa-solid fa-scalpel-line-dashed"></i></div>
+                        <div class="spec-info">
+                            <h3>Chirurgie Générale</h3>
+                            <p>Soins chirurgicaux de pointe et laparoscopie.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="specialty-card">
+                    <a href="laboratoire-imagerie.html" style="display:contents; color:inherit;">
+                        <div class="spec-icon"><i class="fa-solid fa-tv"></i></div>
+                        <div class="spec-info">
+                            <h3>Échographie & Radio</h3>
+                            <p>Équipements numérisés pour diagnostics fiables.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="excellence-footer">
+                <button class="btn btn-yellow">View All Specialties <i class="fa-solid fa-angle-right"></i></button>
+            </div>
+        </section>
+
+        <!-- ABOUT / DOCTORS SECTION -->
+        <section class="about-section container" id="about">
+            <div class="about-grid">
+                <div class="about-img-container reveal">
+                    <div class="about-img-container">
+                        <img src="img/doctors.png" onerror="this.src='https://images.unsplash.com/photo-1576091160550-2173ff9e5eb3?auto=format&fit=crop&q=80&w=800';" alt="Doctors Team" class="about-img">
+                    </div>
+                </div>
+                <div class="about-content reveal">
+                    <div class="section-title-sm" style="color:var(--primary); font-weight:700; font-size:0.875rem; letter-spacing:2px; margin-bottom:12px; text-transform:uppercase;">POURQUOI CHOISIR KERTHAN</div>
+                    <h2 class="section-title">Où l'Expérience<br>Rencontre l'Excellence</h2>
+                    <p class="about-desc">Nous nous engageons à vous fournir les meilleurs soins médicaux possibles. Notre équipe de médecins et d'infirmiers expérimentés est là pour vous aider.</p>
+                    <ul class="about-features">
+                        <li><i class="fa-solid fa-check"></i> Médecins Expérimentés</li>
+                        <li><i class="fa-solid fa-check"></i> Service Centré sur le Patient 24/7</li>
+                        <li><i class="fa-solid fa-check"></i> Technologie Médicale Avancée</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEARCH DISEASES HERO SECTION -->
+        <section class="search-hero container reveal">
+            <div class="search-hero-visual">
+                <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&q=80&w=1000" alt="Scientist looking in microscope" class="hero-bg-img">
+                <div class="hero-overlay">
+                    <h2 class="hero-overlay-title">Des Soins Personnalisés</h2>
+                    <a href="#" class="hero-overlay-link">Découvrez nos innovations</a>
+                </div>
+            </div>
+            
+            <div class="search-hero-content">
+                <h1 class="search-title">Rechercher une maladie</h1>
+                <p class="search-subtitle">Trouvez des informations par la première lettre</p>
+                
+                <div class="alphabet-grid" id="alphabet-filter">
+                    <a href="javascript:void(0)" class="alpha-btn">A</a>
+                    <a href="javascript:void(0)" class="alpha-btn">B</a>
+                    <a href="javascript:void(0)" class="alpha-btn">C</a>
+                    <a href="javascript:void(0)" class="alpha-btn">D</a>
+                    <a href="javascript:void(0)" class="alpha-btn">E</a>
+                    <a href="javascript:void(0)" class="alpha-btn">F</a>
+                    <a href="javascript:void(0)" class="alpha-btn">G</a>
+                    <a href="javascript:void(0)" class="alpha-btn">H</a>
+                    <a href="javascript:void(0)" class="alpha-btn">I</a>
+                    <a href="javascript:void(0)" class="alpha-btn">J</a>
+                    <a href="javascript:void(0)" class="alpha-btn">K</a>
+                    <a href="javascript:void(0)" class="alpha-btn">L</a>
+                    <a href="javascript:void(0)" class="alpha-btn">M</a>
+                    <a href="javascript:void(0)" class="alpha-btn">N</a>
+                    <a href="javascript:void(0)" class="alpha-btn">O</a>
+                    <a href="javascript:void(0)" class="alpha-btn">P</a>
+                    <a href="javascript:void(0)" class="alpha-btn">Q</a>
+                    <a href="javascript:void(0)" class="alpha-btn">R</a>
+                    <a href="javascript:void(0)" class="alpha-btn">S</a>
+                    <a href="javascript:void(0)" class="alpha-btn">T</a>
+                    <a href="javascript:void(0)" class="alpha-btn">U</a>
+                    <a href="javascript:void(0)" class="alpha-btn">V</a>
+                    <a href="javascript:void(0)" class="alpha-btn">W</a>
+                    <a href="javascript:void(0)" class="alpha-btn">X</a>
+                    <a href="javascript:void(0)" class="alpha-btn">Y</a>
+                    <a href="javascript:void(0)" class="alpha-btn">Z</a>
+                </div>
+                
+                <p class="search-input-subtitle">Rechercher une condition médicale</p>
+                <div class="search-bar">
+                    <input type="text" id="disease-search-input" placeholder="Entrez le nom de la maladie_">
+                    <button class="search-submit" id="disease-search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+
+                <!-- Search Results Container -->
+                <div id="disease-results" class="search-results-grid" style="display: none; margin-top: 30px;">
+                    <!-- Results will be injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY CHOOSE OMNIO HOSPITAL -->
+        <section class="why-choose container reveal">
+            <div class="why-choose-header">
+                <h2>Pourquoi Choisir la <span>Clinique KERTHAN ?</span></h2>
+                <p>Équipés des dernières technologies médicales, votre confort et votre santé sont notre priorité absolue. Nous sommes toujours là quand vous en avez le plus besoin.</p>
+            </div>
+            
+            <div class="bento-grid">
+                <!-- Large Left Card -->
+                <div class="bento-card card-tall">
+                    <div class="card-content">
+                        <h3>20+ Ans d'Expérience</h3>
+                        <p>Des décennies de soins de confiance, avec une priorité : votre santé.</p>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1587351021759-3e566b6af7e9?auto=format&fit=crop&q=80&w=800" alt="Hospital Building" class="bento-img">
+                </div>
+                
+                <!-- Middle Top -->
+                <div class="bento-card">
+                    <div class="card-content">
+                        <h3>250+ Médecins Qualifiés</h3>
+                        <p>Des spécialistes expérimentés dévoués à votre santé.</p>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173ff9e5eb3?auto=format&fit=crop&q=80&w=800" alt="Doctors Team" class="bento-img doctors-img">
+                </div>
+                
+                <!-- Right Top -->
+                <div class="bento-card">
+                    <div class="card-content">
+                        <h3>Technologie Médicale Avancée</h3>
+                        <p>Un équipement de pointe pour des diagnostics précis.</p>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800" alt="Medical Tech" class="bento-img tech-img">
+                </div>
+                
+                <!-- Middle Bottom -->
+                <div class="bento-card">
+                    <div class="card-content">
+                        <h3>Centré sur le Patient</h3>
+                        <p>Votre confort et votre bien-être avant tout.</p>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ce122?auto=format&fit=crop&q=80&w=800" alt="Happy Patient" class="bento-img patient-img">
+                </div>
+                
+                <!-- Right Bottom -->
+                <div class="bento-card">
+                    <div class="card-content">
+                        <h3>Service de Qualité 24/7</h3>
+                        <p>Nous sommes toujours là pour vous soutenir.</p>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&q=80&w=800" alt="Service" class="bento-img pharmacy-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- VOICES OF TRUST -->
+        <section class="testimonials-wrapper reveal">
+            <div class="container testimonials-inner">
+                <div class="testimonials-header">
+                    <h2>Voix de Confiance</h2>
+                    <p>Ne vous fiez pas seulement à notre parole. Découvrez les témoignages de nos patients sur leur expérience à la Clinique KERTHAN.</p>
+                    <div class="slider-nav">
+                        <button class="slider-btn prev"><i class="fa-solid fa-arrow-left"></i></button>
+                        <button class="slider-btn next"><i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                
+                <div class="testimonials-slider">
+                    <!-- Active Card 1 -->
+                    <div class="test-card active slide">
+                        <div class="card-img-wrap">
+                            <img src="https://i.pravatar.cc/150?u=1" alt="Sari T.">
+                            <div class="play-btn-overlay"><i class="fa-solid fa-play"></i></div>
+                        </div>
+                        <div class="card-text-wrap">
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <h3>Soins Exceptionnels !</h3>
+                            <p>"Les soins que j'ai reçus à KERTHAN ont été exceptionnels. Les médecins ont pris le temps de tout m'expliquer. Je les recommande vivement."</p>
+                            <span class="badge">Sari T. - Patiente</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Preview Cards -->
+                    <div class="test-preview-card slide">
+                        <img src="https://i.pravatar.cc/150?u=2" alt="John D.">
+                        <div class="play-btn-overlay"><i class="fa-solid fa-play"></i></div>
+                    </div>
+                    <div class="test-preview-card slide">
+                        <img src="https://i.pravatar.cc/150?u=3" alt="Marie L.">
+                        <div class="play-btn-overlay"><i class="fa-solid fa-play"></i></div>
+                    </div>
+                    <div class="test-preview-card slide">
+                        <img src="https://i.pravatar.cc/150?u=4" alt="Paul K.">
+                        <div class="play-btn-overlay"><i class="fa-solid fa-play"></i></div>
+                    </div>
+                    <div class="test-preview-card slide">
+                        <img src="https://i.pravatar.cc/150?u=5" alt="Sylvie M.">
+                        <div class="play-btn-overlay"><i class="fa-solid fa-play"></i></div>
+                    </div>
+                    <div class="test-preview-card slide">
+                        <img src="https://i.pravatar.cc/150?u=6" alt="Luc C.">
+                        <div class="play-btn-overlay"><i class="fa-solid fa-play"></i></div>
+                    </div>
+                    <div class="test-preview-card slide">
+                        <img src="https://i.pravatar.cc/150?u=7" alt="Nadia R.">
+                        <div class="play-btn-overlay"><i class="fa-solid fa-play"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CENTER PROMOTION SANTE (CPS) -->
+        <section class="cps section bg-primary-dark" style="background-color: var(--primary-dark); padding: 80px 0; color: white;">
+            <div class="container">
+                <div class="section-header reveal text-white" style="text-align: center; margin-bottom: 50px;">
+                    <h2 class="section-title" style="color: white; font-size: 2.5rem; margin-bottom: 15px;">Centre de Promotion de la Santé (CPS)</h2>
+                    <h3 style="color: var(--primary-light); font-weight: 400; font-size: 1.5rem; margin-bottom: 20px;">Prévenir – Éduquer – Autonomiser</h3>
+                    <p style="color: #cbd5e1; max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.7;">Agit en amont de la maladie pour structurer la prévention, renforcer la résilience et développer le capital santé des individus et des organisations. Passer d’un modèle centré sur la maladie à un modèle centré sur le capital santé.</p>
+                </div>
+                
+                <div class="cps-grid">
+                    <div class="cps-card reveal">
+                        <div class="cps-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                        <h4>1. Prévention Cardiovasculaire</h4>
+                        <p>Dépistage du diabète, hypertension, dyslipidémies, surpoids.</p>
+                    </div>
+                    <div class="cps-card reveal" style="transition-delay: 0.1s;">
+                        <div class="cps-icon"><i class="fa-solid fa-ribbon"></i></div>
+                        <h4>2. Prévention des Cancers</h4>
+                        <p>Sensibilisation (auto-examen, mammographie), dépistage.</p>
+                    </div>
+                    <div class="cps-card reveal" style="transition-delay: 0.2s;">
+                        <div class="cps-icon"><i class="fa-solid fa-apple-whole"></i></div>
+                        <h4>3. Coaching Nutritionnel</h4>
+                        <p>Évaluation personnalisée, accompagnement à risque cardiovasculaire.</p>
+                    </div>
+                    <div class="cps-card reveal" style="transition-delay: 0.3s;">
+                        <div class="cps-icon"><i class="fa-solid fa-person-running"></i></div>
+                        <h4>4. Santé et Bien-être</h4>
+                        <p>Bilans préventifs, hygiène de vie, activité physique adaptée.</p>
+                    </div>
+                    <div class="cps-card reveal" style="transition-delay: 0.4s;">
+                        <div class="cps-icon"><i class="fa-solid fa-brain"></i></div>
+                        <h4>5. Santé Mentale & Résilience</h4>
+                        <p>Gestion du stress, prévention burn-out, risques psychosociaux.</p>
+                    </div>
+                    <div class="cps-card reveal" style="transition-delay: 0.5s;">
+                        <div class="cps-icon"><i class="fa-solid fa-users"></i></div>
+                        <h4>6. Programmes d’Empowerment</h4>
+                        <p>Conscience de soi, responsabilité, leadership personnel.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRUSTED PARTNERS -->
+        <section class="partners container" style="padding-bottom: 100px; padding-top: 50px; opacity: 1 !important; visibility: visible !important;">
+            <div class="partners-header" style="text-align: left; margin-bottom: 50px;">
+                <h2 class="partners-title" style="color:var(--primary-dark); font-size:2rem; font-weight:700; margin-bottom:10px;">Trusted by Leading Healthcare Partners</h2>
+                <p class="partners-subtitle" style="color:var(--text-muted); font-size:0.95rem;">Collaborating with trusted partners to deliver the best in healthcare services</p>
+            </div>
+            
+            <div class="partners-grid-custom" style="display:grid; grid-template-columns: repeat(6, 1fr); gap:40px; justify-items:center; align-items:center; min-height: 250px;">
+                <!-- Row 1 -->
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/BPJS_Kesehatan_logo.svg" alt="BPJS Kesehatan" style="max-height: 45px; width: auto; object-fit: contain; filter: grayscale(0%); transition: all 0.3s ease;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Allianz.svg" alt="Allianz" style="max-height: 25px; width: auto; object-fit: contain; filter: grayscale(0%); transition: all 0.3s ease;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Avrist_Assurance_logo.png" alt="avrist" style="max-height: 30px; width: auto; object-fit: contain; filter: grayscale(0%); transition: all 0.3s ease;">
+                <img src="img/partners/axa.jpg" alt="AXA" style="max-height: 45px; width: auto; object-fit: contain; filter: grayscale(0%); transition: all 0.3s ease;">
+                <img src="img/partners/bpjs-ketenagakerjaan.png" alt="BPJS Ketenagakerjaan" style="max-height: 35px; width: auto; object-fit: contain; filter: grayscale(0%); transition: all 0.3s ease;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Jasa_Raharja_logo.svg" alt="Jasa Raharja" style="max-height: 50px; width: auto; object-fit: contain; filter: grayscale(0%); transition: all 0.3s ease;">
+
+                <!-- Row 2 -->
+                <img src="img/partners/cigna.png" alt="Cigna" style="max-height: 40px; width: auto; object-fit: contain; filter: grayscale(0%); transition: all 0.3s ease;">
+                <img src="img/partners/manulife.png" alt="Manulife" style="max-height: 22px; width: auto; object-fit: contain; filter: grayscale(0%); transition: all 0.3s ease;">
+                <!-- Prudential SVG direct link (Prudential plc face) -->
+                <img src="img/partners/prudential.png" alt="Prudential" style="max-height: 50px; width: auto; object-fit: contain; filter: grayscale(0%); transition: all 0.3s ease;">
+                <!-- Grapiku textual mimic -->
+                <div style="font-family: 'Arial', sans-serif; font-size: 26px; font-weight: 800; color: #a12b36; letter-spacing: -1.5px;text-transform: lowercase;">grapiku</div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/AIA_Group_logo.svg" alt="AIA" style="max-height: 45px; width: auto; object-fit: contain; filter: grayscale(0%); transition: all 0.3s ease;">
+                <img src="img/partners/bca-life.jpg" alt="BCA life" style="max-height: 35px; width: auto; object-fit: contain; filter: grayscale(0%); transition: all 0.3s ease;">
+            </div>
+        </section>
+    </main>
+
+    <!-- NEW TEAL FOOTER SECTION -->
+    <div class="footer-wrapper reveal" id="contact">
+        <div class="container cta-banner reveal">
+            <h2 class="cta-title">Prévenir – Éduquer – Autonomiser</h2>
+            <div class="cta-cards">
+                <div class="cta-card">
+                    <div class="cta-icon"><i class="fa-solid fa-phone-volume" style="color:#008b9e;"></i></div>
+                    <span class="cta-text">Appel d'Urgence</span>
+                    <button class="cta-arrow"><i class="fa-solid fa-angle-right"></i></button>
+                </div>
+                <div class="cta-card">
+                    <div class="cta-icon"><i class="fa-solid fa-user-doctor" style="color:#008b9e;"></i></div>
+                    <span class="cta-text">Trouver un Médecin</span>
+                    <button class="cta-arrow"><i class="fa-solid fa-angle-right"></i></button>
+                </div>
+                <div class="cta-card" id="footer-book-btn">
+                    <div class="cta-icon"><i class="fa-regular fa-calendar-check" style="color:#008b9e;"></i></div>
+                    <span class="cta-text">Prendre Rendez-vous</span>
+                    <button class="cta-arrow"><i class="fa-solid fa-angle-right"></i></button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container reveal">
+            <div class="footer-divider"></div>
+            
+            <div class="footer-logo-row">
+                <div class="footer-brand">
+                    <i class="fa-solid fa-house-medical hospital-logo-icon"></i>
+                    <div class="brand-text">
+                        <span class="brand-name">Clinique KERTHAN</span>
+                    </div>
+                    <p class="brand-desc">20 ans de dévouement médical.<br>L'excellence à votre portée.</p>
+                </div>
+                
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-divider"></div>
+            
+            <footer class="main-footer">
+                <div class="footer-col">
+                    <h4>Corporate</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Latest News</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Medical Services</h4>
+                    <ul>
+                        <li><a href="#">General Medicine</a></li>
+                        <li><a href="#">Cardiology</a></li>
+                        <li><a href="#">Laboratory</a></li>
+                        <li><a href="#">Dental Care</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Insurance</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom:15px; font-size: 0.9rem;">Subscribe to receive the latest updates.</p>
+                    <div style="display:flex; background:rgba(255,255,255,0.1); border-radius:30px; padding:5px;">
+                        <input type="email" placeholder="Your Email" style="flex:1; background:transparent; border:none; color:white; padding:10px 15px; outline:none;">
+                        <button style="width:40px; height:40px; border-radius:50%; border:none; background:var(--primary); color:white; cursor:pointer;"><i class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </div>
+                
+            </footer>
+        </div>
+    </div>
+
+    <!-- Consultation Modal (From SITE DOCTOR) -->
+    <div id="consultationModal" class="modal">
+        <div class="modal-content" style="background:#fff; border-radius:20px; padding:40px;">
+            <span class="close-modal">&times;</span>
+            <div id="pdf-content">
+                <div class="modal-header" style="text-align:center; margin-bottom:20px;">
+                    <i class="fa-solid fa-house-medical" style="font-size: 2rem; color: var(--primary); margin-bottom: 10px;"></i>
+                    <h2 style="color:var(--secondary); margin-bottom:10px; font-size:1.8rem;">Fiche de Consultation KERTHAN</h2>
+                    <p style="color:var(--text-muted);">Veuillez remplir vos informations pour une prise en charge rapide.</p>
+                </div>
+                <form id="consultationForm">
+                    <div class="form-group" style="margin-bottom:15px;">
+                        <label for="patientName" style="display:block; margin-bottom:5px; font-weight:600;">Nom complet</label>
+                        <input type="text" id="patientName" required placeholder="Ex: Jean Dupont" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:8px;">
+                    </div>
+                    <div class="form-group-row" style="display:flex; gap:15px; margin-bottom:15px;">
+                        <div class="form-group" style="flex:1;">
+                            <label for="patientAge" style="display:block; margin-bottom:5px; font-weight:600;">Âge</label>
+                            <input type="number" id="patientAge" required placeholder="Ex: 35" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:8px;">
+                        </div>
+                        <div class="form-group" style="flex:1;">
+                            <label for="patientPhone" style="display:block; margin-bottom:5px; font-weight:600;">Téléphone</label>
+                            <input type="tel" id="patientPhone" required placeholder="Ex: +237 600 000 000" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:8px;">
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-bottom:15px;">
+                        <label for="consultationType" style="display:block; margin-bottom:5px; font-weight:600;">Type de consultation</label>
+                        <select id="consultationType" required style="width:100%; padding:10px; border:1px solid #ccc; border-radius:8px;">
+                            <option value="presentiel">En présentiel (à la clinique)</option>
+                            <option value="visio">En visioconférence (Téléconsultation)</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="margin-bottom:15px;">
+                        <label for="serviceBranch" style="display:block; margin-bottom:5px; font-weight:600;">Service concerné</label>
+                        <select id="serviceBranch" required style="width:100%; padding:10px; border:1px solid #ccc; border-radius:8px;">
+                            <option value="Médecine Générale">Médecine Générale</option>
+                            <option value="Cardiologie">Cardiologie</option>
+                            <option value="Gynécologie">Gynécologie Obstétrique</option>
+                            <option value="Chirurgie">Chirurgie</option>
+                            <option value="Dentaire">Soins Dentaires</option>
+                            <option value="Laboratoire">Laboratoire / Imagerie</option>
+                            <option value="Autre">Autre</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="margin-bottom:15px;">
+                        <label for="consultationReason" style="display:block; margin-bottom:5px; font-weight:600;">Motif de la consultation</label>
+                        <textarea id="consultationReason" rows="3" required placeholder="Décrivez brièvement vos symptômes ou votre besoin..." style="width:100%; padding:10px; border:1px solid #ccc; border-radius:8px;"></textarea>
+                    </div>
+                    <div class="form-group file-upload-group" style="margin-bottom:15px; border:2px dashed #cbd5e1; padding:20px; text-align:center; border-radius:10px; position:relative;">
+                        <label for="medicalDocument" style="color:var(--primary); font-weight:600; cursor:pointer;">Joindre une ordonnance ou résultat (Optionnel)</label>
+                        <input type="file" id="medicalDocument" accept="image/*,.pdf" style="position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; cursor:pointer;">
+                        <small style="display:block; color:var(--text-muted); margin-top:5px;">Format accepté: Images ou PDF.</small>
+                        <div id="imagePreview" style="margin-top: 10px; display: none;"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px; padding:12px; font-size:1.1rem; border-radius:30px;">
+                        Générer la fiche & Envoyer via WhatsApp <i class="fa-brands fa-whatsapp" style="margin-left: 5px;"></i>
+                    </button>
+                    <div id="loadingMessage" style="display: none; text-align: center; margin-top: 15px; color: var(--primary);">
+                        <i class="fa-solid fa-spinner fa-spin"></i> Génération du PDF en cours...
+                    </div>
+                </form>
+            </div>
+            
+            <div id="successMessage" style="display: none; text-align: center; padding: 20px;">
+                <i class="fa-solid fa-circle-check" style="font-size: 3rem; color: #22c55e; margin-bottom: 20px;"></i>
+                <h3 style="color:var(--secondary); font-size:1.5rem; margin-bottom:10px;">Fiche générée avec succès !</h3>
+                <p style="margin: 15px 0; color:var(--text-main);">Le PDF a été téléchargé sur votre appareil.</p>
+                <div style="background: var(--bg-light); padding: 15px; border-radius: 10px; margin-bottom: 20px;">
+                    <strong style="color:var(--secondary);">Étape suivante :</strong><br>
+                    WhatsApp va s'ouvrir. Rédigez votre message et <strong>n'oubliez pas de joindre le PDF téléchargé</strong> dans la conversation !
+                </div>
+                <button id="closeSuccess" class="btn btn-secondary" style="border-radius:30px;">Fermer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Disease Detail Modal -->
+    <div id="diseaseModal" class="modal">
+        <div class="modal-content" style="background:#fff; border-radius:20px; padding:40px; max-width:600px;">
+            <span class="close-modal" id="close-disease-modal">&times;</span>
+            <div id="disease-detail-content">
+                <div class="modal-header" style="text-align:center; margin-bottom:20px;">
+                    <div id="disease-icon-box" style="width:70px; height:70px; background:var(--primary-light); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 15px; color:var(--primary-dark); font-size:1.5rem;">
+                        <i class="fa-solid fa-briefcase-medical"></i>
+                    </div>
+                    <h2 id="modal-disease-name" style="color:var(--secondary); margin-bottom:5px; font-size:2rem;">Nom de la Maladie</h2>
+                    <span id="modal-disease-category" class="badge" style="background:var(--primary); color:white; padding:5px 15px; border-radius:20px; font-size:0.8rem;">Catégorie</span>
+                </div>
+                <div class="disease-info-body" style="line-height:1.6; color:var(--text-main);">
+                    <p id="modal-disease-desc">Description détaillée de la maladie...</p>
+                    <div style="margin-top:25px; padding:20px; background:var(--bg-light); border-radius:15px; border-left:5px solid var(--primary);">
+                        <h4 style="color:var(--primary-dark); margin-bottom:10px;"><i class="fa-solid fa-circle-info"></i> Conseil de la Clinique</h4>
+                        <p style="font-size:0.9rem;">Si vous présentez des symptômes liés à cette condition, nous vous recommandons de consulter l'un de nos spécialistes pour un diagnostic précis.</p>
+                    </div>
+                    <button class="btn btn-primary" style="width:100%; margin-top:30px; border-radius:30px;" onclick="document.getElementById('diseaseModal').style.display='none'; document.getElementById('consultationModal').style.display='block';">Prendre rendez-vous pour cette condition</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="diseases.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
