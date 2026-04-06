@@ -1,4 +1,37 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    // 0. Mobile Menu Toggle
+    const mobileToggle = document.getElementById('mobile-menu-toggle');
+    const mainNav = document.getElementById('main-nav');
+    
+    if (mobileToggle && mainNav) {
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            mainNav.classList.toggle('open');
+            document.body.style.overflow = mainNav.classList.contains('open') ? 'hidden' : '';
+        });
+        // Close menu when a nav link is clicked
+        mainNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileToggle.classList.remove('active');
+                mainNav.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        });
+    }
+
+    // Mobile book button
+    const mobileBookBtn = document.getElementById('book-btn-mobile');
+    if (mobileBookBtn) {
+        mobileBookBtn.addEventListener('click', () => {
+            const modal = document.getElementById('consultationModal');
+            if (modal) modal.classList.add('show');
+            if (mobileToggle) mobileToggle.classList.remove('active');
+            if (mainNav) mainNav.classList.remove('open');
+            document.body.style.overflow = '';
+        });
+    }
+
     // 1. Scroll Animations (Intersection Observer)
     const revealElements = document.querySelectorAll('.reveal');
     
